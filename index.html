@@ -63,8 +63,40 @@
                             </label>
                         </div>
                         <div v-else>
-                            <img ref="predictImage" v-bind:src="image" width="224" height="224" />
-                            <button @click="removeImage">Remove</button>
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img v-bind:src="image"
+                                            alt="Placeholder image" />
+                                    </figure>
+                                </div>
+                                <div class="card-content">
+                                    <div class="media">
+                                        <div class="media-content">
+                                            <p class="title is-4">
+                                                Prediction: Car
+                                            </p>
+                                            <p class="subtitle is-6">
+                                                Probability: 0.5%
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="content">
+                                        <div class="columns">
+                                            <div class="column">
+                                                <button @click="removeImage" class="button is-fullwidth">
+                                                    Clear
+                                                </button>
+                                            </div>
+                                            <div class="column">
+                                                <button class="button is-primary is-fullwidth">
+                                                    Predict Again
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
