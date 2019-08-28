@@ -7,7 +7,9 @@
         <meta name="author" content="Amador Cuenca <sphi02ac@gmail.com>">
         <title>Simple Image Classifier</title>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+
 
         <script src="https://unpkg.com/@tensorflow/tfjs"></script>
         <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
@@ -15,16 +17,40 @@
          <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0"> </script>
     </head>
     <body>
-      <input type="file" accept="image/gif, image/jpeg, image/png" onchange="loadFile(event)" id="file-upload">
-      <button type="button" onclick="app()" id="btn-predict">Predict!</button>
+      <div class="container">
+        <div class="block">
+          <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a href="https://github.com/acuencadev/SimpleImageClassifier" class="navbar-item">
+                <h1 class="title is-4">Simple Image Classifier</h1>
+              </a>
+            </div>
+            <div class="navbar-end">
+              <a href="https://github.com/acuencadev" target="_blank" class="navbar-item">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+              </a>
+              <a href="https://www.linkedin.com/in/acuencadev/" target="_blank" class="navbar-item">
+                <span class="icon">
+                  <i class="fab fa-linkedin"></i>
+                </span>
+              </a>
+            </div>
+          </nav>
+        </div>
+        <div class="block">
+          <input type="file" accept="image/gif, image/jpeg, image/png" onchange="loadFile(event)" id="file-upload">
+          <button type="button" onclick="app()" id="btn-predict">Predict!</button>
+          <img id="img" width="224" height="224">
 
-      <img id="img" width="224" height="224">
-
-      <div id="console"></div>
-      <!--
-      <div id="console"></div>
-      <img id="img" crossOrigin src="https://i.imgur.com/JlUvsxa.jpg" width=227 height=227/>
-      -->
+          <div id="console"></div>
+          <!--
+          <div id="console"></div>
+          <img id="img" crossOrigin src="https://i.imgur.com/JlUvsxa.jpg" width=227 height=227/>
+          -->
+        </div>
+      </div>
       <script src="main.js"></script>
     </body>
 </html>
