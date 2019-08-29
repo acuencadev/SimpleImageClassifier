@@ -22,10 +22,25 @@ var app = new Vue({
                 vm.image = e.target.result;
             };
             reader.readAsDataURL(file);
+
+            this.predict().then(predictions => {
+                this.predictions = predictions;
+            });
         },
         removeImage: function () {
             this.image = '';
             this.predictions = [];
+        },
+        predict: async function () {
+            this.loading = true;
+            net = await mobilenet.load();
+
+            var predictImage = this.$refs.predictImage;
+
+            this.loading = false;
+
+            return net.classify(predictImage);
         }
     }
 });
+0
